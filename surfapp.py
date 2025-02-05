@@ -5,15 +5,15 @@ app = Flask(__name__)
 
 
 
-arecibo_wave_data = Waves('https://www.ndbc.noaa.gov/data/realtime2/41121.txt')
-arecibo_wave_conditions = [arecibo_wave_data.get_wave_heights(),
-                           arecibo_wave_data.get_wave_periods(),
-                           arecibo_wave_data.get_wave_direction()]
+rincon_wave_data = Waves('https://www.ndbc.noaa.gov/data/realtime2/41115.txt')
+rincon_wave_conditions = [rincon_wave_data.get_wave_heights(),
+                           rincon_wave_data.get_wave_periods(),
+                           rincon_wave_data.get_wave_direction()]
 
-arecibo_wind_data = Winds('https://www.ndbc.noaa.gov/data/realtime2/41121.txt')
-arecibo_wind_conditions = [arecibo_wind_data.get_wind_speed(),
-                           arecibo_wind_data.get_gusts(),
-                           arecibo_wind_data.get_wind_direction()]
+rincon_wind_data = Winds('https://www.ndbc.noaa.gov/data/realtime2/41115.txt')
+rincon_wind_conditions = [rincon_wind_data.get_wind_speed(),
+                           rincon_wind_data.get_gusts(),
+                          rincon_wind_data.get_wind_direction()]
 
 sanjuan_wave_data = Waves('https://www.ndbc.noaa.gov/data/realtime2/41053.txt')
 sanjuan_wave_conditions = [sanjuan_wave_data.get_wave_heights(),
@@ -28,11 +28,11 @@ sanjuan_wind_conditions = [sanjuan_wind_data.get_wind_speed(),
 
 @app.route("/")
 @app.route("/home")
-@app.route("/arecibo")
+@app.route("/rincon")
 def home():
     return render_template('home.html',
-                           arecibo_wave_conditions=arecibo_wave_conditions,
-                           arecibo_wind_conditions=arecibo_wind_conditions)
+                           rincon_wave_conditions=rincon_wave_conditions,
+                           rincon_wind_conditions=rincon_wind_conditions)
 
 @app.route("/sanjuan")
 def sanjuan():
@@ -42,3 +42,5 @@ def sanjuan():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
