@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pelican Surf Report</title>
     <link rel="stylesheet" href="/static/home.css" />
     <style>
-        .pointerwave {
-            background-color: #dc7c06;
-            grid-area: 1/1;
-            z-index: 10;
-            height: 20px;
-            aspect-ratio: 2/1;
-            clip-path: polygon(30% 0, 70% 0, 50% 100%);
-            margin: auto;
-            transform: rotate({{arecibo_wave_conditions[2]}})
-        }
+      .pointerwave {
+        background-color: #dc7c06;
+        grid-area: 1/1;
+        z-index: 10;
+        height: 20px;
+        aspect-ratio: 2/1;
+        clip-path: polygon(30% 0, 70% 0, 50% 100%);
+        margin: auto;
+        transform: rotate({{rincon_wave_conditions[2]}});
+      }
 
-        .pointerwind {
-            background-color: #dc7c06;
-            grid-area: 1/1;
-            z-index: 10;
-            height: 20px;
-            aspect-ratio: 2/1;
-            clip-path: polygon(30% 0, 70% 0, 50% 100%);
-            margin: auto;
-            transform: rotate({{arecibo_wind_conditions[2]}})
-        }
+      .pointerwind {
+        background-color: #dc7c06;
+        grid-area: 1/1;
+        z-index: 10;
+        height: 20px;
+        aspect-ratio: 2/1;
+        clip-path: polygon(30% 0, 70% 0, 50% 100%);
+        margin: auto;
+        transform: rotate({{rincon_wind_conditions[2]}});
+      }
     </style>
-</head>
-<div class="container">
-            <header class="header">
-                <div class="logo">
-                    <img src="/static/pelican.png" alt="Pelican" width="150" height=100>
-                </div>
-                <h1> Pelican Surf Report </h1>
-            </header>
+  </head>
+  <div class="container">
+    <header class="header">
+      <div class="logo">
+        <img src="/static/pelican.png" alt="Pelican" width="150" height="100" />
+      </div>
+      <h1>Pelican Surf Report</h1>
+    </header>
 
-            <h2> Arecibo, Puerto Rico : Surf Conditions </h2>
-            <p> Powered by NOAA and the National Data Buoy Center </p>
-            <h3>Swell Conditions</h3>
-            <div class="compass">
-                <div class="dot"></div>
-                    <div class="pointerwave"></div>
-            </div>
-            <p>{{arecibo_wave_conditions[0]}} at {{arecibo_wave_conditions[1]}} || {{arecibo_wave_conditions[2]}}</p>
+    <h2>Rincón, Puerto Rico : Surf Conditions</h2>
+    <p>Powered by NOAA and the National Data Buoy Center</p>
+    <h3>Swell Conditions</h3>
+    <div class="compass">
+      <div class="dot"></div>
+      <div class="pointerwave"></div>
+    </div>
+    <p>
+      {{rincon_wave_conditions[0]}} at {{rincon_wave_conditions[1]}} ||
+      {{rincon_wave_conditions[2]}}
+    </p>
 
-            <h3>Wind Speed and Direction</h3>
-            <div class="compass">
-                <div class="dot"></div>
-                    <div class="pointerwind"></div>
-            </div>
-            <p> {{arecibo_wind_conditions[0]}} || {{arecibo_wind_conditions[2]}}</p>
+    <h3>Wind Speed and Direction</h3>
+    <div class="compass">
+      <div class="dot"></div>
+      <div class="pointerwind"></div>
+    </div>
+    <p>{{rincon_wind_conditions[0]}} || {{rincon_wind_conditions[2]}}</p>
 
-            <h3>Wind gusts</h3>
-            <p>{{arecibo_wind_conditions[1]}}</p>
-        </div>
+    <h3>Wind gusts</h3>
+    <p>{{rincon_wind_conditions[1]}}</p>
+  </div>
 </html>
